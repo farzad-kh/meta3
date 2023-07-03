@@ -2,12 +2,12 @@
 import { motion } from "framer-motion";
 import  styles from "../styles/index"
 import { navVariants } from "@/utils/motion";
-
+console.log(navVariants.show);
 const Navbar = () => (
   <motion.nav
   variants={navVariants}
-  initial="hidden"
-  whileInView="show"
+  initial={navVariants.hidden}
+  whileInView={navVariants.show}
   className={`sm:px-16 px-6 py-8 relative`}
   >
   <div className="absolute w-[50%] inset-0  gradient-01 "></div>

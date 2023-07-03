@@ -37,7 +37,7 @@ const World = () =>
       <motion.div
         initial="hiden"
         whileInView="show"
-
+        viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex md:flex-row flex-col gap-8 justify-between mt-10`}
       >
         <div className="flex flex-col w-full justify-center items-center  flex-wrap lg:p-8 p-0    ">
@@ -52,8 +52,10 @@ const World = () =>
             />
           </div>
           <motion.div
-            initial={showMapMotion().hidden}
-            whileInView={showMapMotion().show}
+          variants={showMapMotion()}
+          initial={showMapMotion().hidden}
+          whileInView={showMapMotion().show}
+      
 
 
 
@@ -62,6 +64,7 @@ const World = () =>
             <img src="/map.png" alt="map" className="w-full h-full object-cover" />
 
             <motion.div
+                 variants={flip(1)}
               initial={flip(1).hidden}
               whileInView={flip(1).show}
 
@@ -71,6 +74,7 @@ const World = () =>
             </motion.div>
 
             <motion.div
+             variants={flip(3)}
               initial={flip(3).hidden}
               whileInView={flip(3).show}
               className="absolute top-10 left-20 w-[70px] h-[70px] p-[6px] rounded-full bg-[#5D6680] shadow-pink ">
@@ -78,6 +82,7 @@ const World = () =>
             </motion.div>
 
             <motion.div
+             variants={flip(2)}
               initial={flip(2).hidden}
               whileInView={flip(2).show}
 

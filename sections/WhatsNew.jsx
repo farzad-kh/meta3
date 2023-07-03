@@ -9,6 +9,7 @@ const WhatsNew = () => (
   <section className={`sm:py-[4.5rem] py-6 sm:px-16 px-6 z-10 relative `}>
 
     <motion.div
+    variants="hidden"
       inherit="hidden"
       whileInView="show"
       viewport={{ once: false }}

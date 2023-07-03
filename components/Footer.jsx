@@ -9,8 +9,8 @@ import { footerVariants } from '../utils/motion';
 const Footer = () => (
   <motion.footer
     variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
+    initial={footerVariants.hidden}
+    whileInView={footerVariants.show}
     className={`${styles.xPaddings} py-8 relative sm:px-16 px-6`}
   >
     <div className="footer-gradient" />

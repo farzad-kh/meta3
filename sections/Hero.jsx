@@ -41,9 +41,11 @@ const Hero = () =>
       <motion.div
 
         variants={slideIn('right', 'tween', 0.1, 1.2)}
+        initial={slideIn('right', 'tween', 0.1, 1.2).hidden}
+        whileInView={slideIn('right', 'tween', 0.1, 1.2).show}
         className="relative  md:mt-5 -mt-3 w-[92%] right-[-10%] "
       >
-        <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]"> </div>
+        <div className="absolute w-full h-[300px]  rounded-tl-[140px] z-[0] -top-[30px]"> </div>
           <img src="/cover.png" alt="cover" className="rounded-tl-[140px] z-10 object-cover relative w-full sm:h-[500px] h-[350px]" />
           <a href="#explore">
 

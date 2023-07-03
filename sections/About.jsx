@@ -34,24 +34,25 @@ import { fadeIn, staggerContainer } from '../utils/motion';
 
 const About = () => {
 
-  
 
-  
+
+
   return (
-    <section  className={`sm:py-[4.5rem] py-6 sm:px-16 px-6 relative z-10`}>
+    <section className={`sm:py-[4.5rem] py-6 sm:px-16 px-6 relative z-10`}>
       <div className="gradient-02 z-0" />
       <motion.div
         variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
+        initial={staggerContainer.hidden}
+        whileInView={staggerContainer.show}
         viewport={{ once: false }}
         className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
       >
-        <TypingText   title="| About Metaversus" textStyles="text-center" />
+        <TypingText title="| About Metaversus" textStyles="text-center" />
 
         <motion.p
           variants={fadeIn('up', 'tween', 0.1, 1)}
-
+          initial={fadeIn('up', 'tween', 0.1, 1).hidden}
+          whileInView={fadeIn('up', 'tween', 0.1, 1).show}
 
           className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white z-30 text-slate-400"
         >
@@ -72,6 +73,8 @@ const About = () => {
 
         <motion.img
           variants={fadeIn('up', 'tween', 0.3, 1)}
+          initial={fadeIn('up', 'tween', 0.3, 1).hidden}
+          whileInView={fadeIn('up', 'tween', 0.3, 1).show}
           src="/arrow-down.svg"
           alt="arrow down"
           className="w-[18px] h-[28px] object-contain mt-[28px]"
